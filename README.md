@@ -1,6 +1,4 @@
 # tsaichendunizhishigeloli
-.  ˙ .I'm ThE oNe WhO tElLs LiEsSsSsSs.˙  .
-THATS MY INTIRE LIFE SAVINGS DUDDEEEEEEE
 # 📚 課程教學網站專案架構
 
 ## 📂 目錄結構說明
