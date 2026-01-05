@@ -1,2 +1,2 @@
 # tsaichendunizhishigeloli
-I'm ThE oNe WhO 
+.  ˙ .I'm ThE oNe WhO tElLs LiEsSsSsSs.˙  .
