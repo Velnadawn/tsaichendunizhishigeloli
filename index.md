@@ -10,11 +10,13 @@ title: 📚 程式課程學習中心
 <style>
     .card-container {
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
         margin-top: 30px;
     }
     .card {
         flex: 1;
+        min-width: 250px;
         padding: 20px;
         border: 1px solid #e0e0e0;
         border-radius: 12px;
@@ -23,6 +25,9 @@ title: 📚 程式課程學習中心
         transition: transform 0.2s, box-shadow 0.2s;
         text-decoration: none !important;
         color: #333 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .card:hover {
         transform: translateY(-5px);
@@ -36,6 +41,7 @@ title: 📚 程式課程學習中心
     .card p {
         font-size: 0.9em;
         color: #666;
+        flex-grow: 1;
     }
     .btn-start {
         display: inline-block;
@@ -55,14 +61,15 @@ title: 📚 程式課程學習中心
         <span class="btn-start">開始學習</span>
     </a>
 
-<a href="./ai/ch01" class="card">
+    <a href="./ai/ch01" class="card">
         <h2>🤖 AI 課程</h2>
         <p>機器學習導論與神經網路實作教學。</p>
         <span class="btn-start">開始學習</span>
     </a>
-<a href="./more/Ch01" class="card">
+
+    <a href="./more/ch01" class="card">
         <h2>多元選修</h2>
-        <p>AI機器人。</p>
+        <p>AI機器人實作與應用。</p>
         <span class="btn-start">開始學習</span>
     </a>
 </div>
@@ -70,5 +77,5 @@ title: 📚 程式課程學習中心
 ---
 
 ### 📢 最新更新
+- **2026-01-12**: 調整課程首頁排版與移動端優化。
 - **2025-12-28**: 新增 AI 課程第二章「神經網路」。
-- **2025-12-28**: 修正 MATLAB 側邊欄導覽連結。
