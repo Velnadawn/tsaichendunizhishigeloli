@@ -55,9 +55,14 @@ title: 📚 程式課程學習中心
         <span class="btn-start">開始學習</span>
     </a>
 
-    <a href="./ai/ch01" class="card">
+<a href="./ai/ch01" class="card">
         <h2>🤖 AI 課程</h2>
         <p>機器學習導論與神經網路實作教學。</p>
+        <span class="btn-start">開始學習</span>
+    </a>
+<a href="./多元/ch01" class="card">
+        <h2>多元選修</h2>
+        <p>AI機器人。</p>
         <span class="btn-start">開始學習</span>
     </a>
 </div>
