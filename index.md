@@ -4,169 +4,168 @@ title: 📚 程式課程學習中心
 ---
 
 <style>
-    /* 深色主題變數 */
-    :root {
-        --bg-dark: #0f172a;           /* 深藍黑背景 */
-        --card-bg: #1e293b;           /* 卡片深色背景 */
-        --text-primary: #f8fafc;      /* 近純白文字 */
-        --text-secondary: #94a3b8;    /* 灰色文字 */
-        --accent-matlab: #fb923c;     /* 橘色光暈 */
-        --accent-ai: #38bdf8;         /* 藍色光暈 */
-        --accent-more: #4ade80;       /* 綠色光暈 */
+    /* 強制覆蓋主題背景 */
+    body, .main-wrapper-dark {
+        background-color: #050505 !important;
+        color: #e0e0e0 !important;
     }
 
-    .main-wrapper {
-        background-color: var(--bg-dark);
-        color: var(--text-primary);
-        padding: 40px 20px;
-        border-radius: 24px;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    .main-wrapper-dark {
+        padding: 60px 20px;
+        font-family: -apple-system, system-ui, sans-serif;
+        min-height: 100vh;
     }
 
-    .header-section {
+    .container-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .header-area {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
     }
 
-    .header-section h1 {
-        font-size: 2.8rem;
+    .header-area h1 {
+        font-size: 3rem;
         font-weight: 800;
-        background: linear-gradient(to right, #fff, #94a3b8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        border: none;
-    }
-
-    /* 卡片容器 */
-    .course-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
-
-    /* 卡片基礎樣式 */
-    .glass-card {
-        background: var(--card-bg);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 30px;
-        text-decoration: none !important;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .glass-card:hover {
-        transform: scale(1.02);
-        border-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    /* 頂部裝飾條 */
-    .glass-card::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 4px;
-    }
-
-    .card-matlab::before { background: var(--accent-matlab); }
-    .card-ai::before { background: var(--accent-ai); }
-    .card-more::before { background: var(--accent-more); }
-
-    .glass-card h2 {
-        color: var(--text-primary);
-        font-size: 1.5rem;
+        color: #ffffff !important;
         margin-bottom: 15px;
+        border: none !important;
+        letter-spacing: -1px;
+    }
+
+    .header-area p {
+        color: #888;
+        font-size: 1.2rem;
+    }
+
+    /* 卡片設計：深色磨砂質感 */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .dark-card {
+        background: #111111;
+        border: 1px solid #222;
+        border-radius: 24px;
+        padding: 40px;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dark-card:hover {
+        background: #161616;
+        border-color: #444;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .dark-card h2 {
+        font-size: 1.6rem;
+        color: #ffffff !important;
+        margin: 0 0 15px 0;
+        border: none !important;
+    }
+
+    .dark-card p {
+        color: #999;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        flex-grow: 1;
+    }
+
+    /* 動作按鈕 */
+    .go-btn {
+        color: #ffffff !important;
+        font-weight: 600;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
     }
 
-    .glass-card p {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 25px;
-    }
-
-    /* 霓虹按鈕 */
-    .action-label {
-        font-weight: 600;
-        font-size: 0.9rem;
-        display: inline-flex;
-        align-items: center;
-        color: var(--text-primary);
-    }
-
-    .action-label svg {
-        margin-left: 8px;
+    .go-btn::after {
+        content: '→';
         transition: transform 0.3s;
     }
 
-    .glass-card:hover .action-label svg {
-        transform: translateX(5px);
+    .dark-card:hover .go-btn::after {
+        transform: translateX(8px);
+    }
+
+    /* 針對不同課程的發光效果 */
+    .dark-card:hover h2 {
+        text-shadow: 0 0 15px rgba(255,255,255,0.2);
     }
 
     /* 更新日誌 */
-    .changelog {
-        margin-top: 60px;
-        padding: 25px;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 15px;
+    .update-section {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #222;
     }
 
-    .changelog h3 { color: var(--text-primary); border: none; margin-bottom: 15px; }
-    .log-row {
-        display: flex;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        padding-bottom: 8px;
+    .update-section h3 {
+        color: #fff !important;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
     }
-    .date-tag { color: var(--accent-ai); font-family: monospace; width: 100px; }
+
+    .update-item {
+        margin-bottom: 12px;
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    .update-date {
+        color: #444;
+        margin-right: 15px;
+        font-family: monospace;
+    }
 </style>
 
-<div class="main-wrapper">
-    <div class="header-section">
-        <h1>程式課程學習中心</h1>
-        <p style="color: var(--text-secondary);">探索 MATLAB 運算力與 AI 的無限可能</p>
-    </div>
+<div class="main-wrapper-dark">
+    <div class="container-inner">
+        <header class="header-area">
+            <h1>程式課程學習中心</h1>
+            <p>2026 年度 MATLAB 與 AI 核心技術講義</p>
+        </header>
 
-<div class="course-grid">
-        <a href="./matlab/ch01" class="glass-card card-matlab">
-            <h2>📊 MATLAB</h2>
-            <p>深入淺出演算法開發，掌握科學數據處理的業界標準工具。</p>
-            <div class="action-label">
-                進入課程 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-        </a>
+<div class="card-grid">
+            <a href="./matlab/ch01" class="dark-card">
+                <h2>📊 MATLAB</h2>
+                <p>從矩陣運算到專業繪圖，建構科學計算的堅實基礎。</p>
+                <div class="go-btn">Start Learning</div>
+            </a>
 
-<a href="./ai/ch01" class="glass-card card-ai">
-            <h2>🤖 AI 課程</h2>
-            <p>探索機器學習與神經網路，從理論基礎到建構自動化 AI 模型。</p>
-            <div class="action-label">
-                進入課程 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-        </a>
+<a href="./ai/ch01" class="dark-card">
+                <h2>🤖 AI 課程</h2>
+                <p>深度學習導論：從零開始實作你的第一個神經網路。</p>
+                <div class="go-btn">Start Learning</div>
+            </a>
 
-<a href="./more/ch01" class="glass-card card-more">
-            <h2>🚀 多元選修</h2>
-            <p>結合 AI 機器人實務，打破虛擬與現實的邊界，啟發無限創意。</p>
-            <div class="action-label">
-                進入課程 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-        </a>
-    </div>
-
-<div class="changelog">
-        <h3>📢 最近更新</h3>
-        <div class="log-row">
-            <span class="date-tag">2026.01.12</span>
-            <span>切換至 Dark Mode 賽博風格介面。</span>
+<a href="./more/ch01" class="dark-card">
+                <h2>🚀 多元選修</h2>
+                <p>結合 AI 機器人與自動化控制，實踐跨領域的創新應用。</p>
+                <div class="go-btn">Start Learning</div>
+            </a>
         </div>
-        <div class="log-row">
-            <span class="date-tag">2025.12.28</span>
-            <span>新增 AI 課程：深度學習與卷積神經網路實作。</span>
+
+ <div class="update-section">
+            <h3>最近更新</h3>
+            <div class="update-item">
+                <span class="update-date">2026.01.12</span>
+                <span>介面切換至深色沉浸式版本。</span>
+            </div>
+            <div class="update-item">
+                <span class="update-date">2025.12.28</span>
+                <span>新增 AI 課程：Transformer 架構解析。</span>
+            </div>
         </div>
     </div>
 </div>
